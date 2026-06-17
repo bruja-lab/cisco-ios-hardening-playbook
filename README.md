@@ -73,3 +73,39 @@ Switch# exit
 
 ---
 *Next Operational Track: Hardware baseline secured and completely under root administrative control. Initializing Layer 2 network segmentation protocols.*
+
+---
+
+---
+
+## 🔌 3. Physical Layer 1 Infrastructure Mapping & Structural Cable Routing
+
+**Objective:** Design and deploy a dedicated, physical Category 6 (Cat 6) copper infrastructure array to eliminate wireless overhead vulnerabilities, minimize electromagnetic interference (EMI), and establish secure hardline pathways.
+
+### 🏗️ Routing Layout & Termination Node Drops
+Successfully pulled, structured, routed, and punched down a total of 9 independent copper drops through the attic framing to isolate localized endpoints:
+
+*   **Endpoint Zone Alpha:** 1 dedicated drop (Primary Gaming Engine)
+*   **Endpoint Zone Beta:** 2 dedicated drops (Gaming Engine, Local Media Server)
+*   **Command Node Vault (Operator Workspace):** 4 dedicated drops (Workstation Engine, Tablet Device, Console Infrastructure, and local laptop testing node)
+*   **Auxiliary Monitoring Node:** 1 dedicated drop (Remote Media Monitoring Display)
+*   **Core Gateway Interface Interconnect:** 1 dedicated drop (Connecting the primary perimeter security router to the upstream service gateway modem)
+
+### 💻 Initial Physical Interface Mapping (Redacted` Catalyst 3850)
+
+```cisco
+# Mapping the physical ingress lines directly into the core switch configuration
+Shadow# show interfaces description
+
+Interface             Status         Protocol      Description
+----------------------------------------------------------------------------------
+Gi1/0/2               up             up            Hardline Workstation Node (Redacted)
+Gi1/0/24              up             up            Perimeter Edge Router Gateway
+```
+
+*Note: The remaining physical attic drops are currently patched into the distribution frame with port matrix assignments pending final logic segmentation.*
+
+### 📝 Analyst Operational Notes
+
+*   **Infrastructure Findings:** The physical copper topology is 100% complete and fully verified at Layer 1 using physical continuity testing tools. 
+*   **Next Operational Vector:** Transitioning operations from physical routing to logical Layer 2 hardening. Next steps involve building out localized virtual local area networks (VLAN isolation zones or "Toddler Bubbles") and enforcing explicit MAC-address filtering rules (`port-security`) across all newly deployed ingress interfaces on the Catalyst switch.
